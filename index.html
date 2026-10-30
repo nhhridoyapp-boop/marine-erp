@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>SAN MARINE SURVEY & INSPECTION</title>
+    <meta name="description" content="Scale Monitoring and Truck Entry System" />
+    <meta property="og:title" content="SAN MARINE SURVEY & INSPECTION" />
+    <meta property="og:description" content="Scale Monitoring and Truck Entry System" />
+    <meta property="og:image" content="/sanmarine-logo.png" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0B2A4A" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="SAN MARINE SURVEY & INSPECTION" />
+    <link rel="icon" type="image/png" href="/sanmarine-logo.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <style>@keyframes smspin{to{transform:rotate(360deg)}}</style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#f8fafc] text-slate-800 font-sans antialiased selection:bg-teal-500 selection:text-white">
+    <div id="root">
+      <!-- Boot screen: visible from the first paint, replaced as soon as the app mounts. Never a blank white page. -->
+      <div id="sm-boot" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#0B2A4A;color:#fff;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;text-align:center;padding:24px">
+        <img src="/sanmarine-logo.png" alt="" width="64" height="64" style="border-radius:16px;object-fit:contain">
+        <div style="margin-top:12px;font-weight:800;font-size:14px;letter-spacing:.04em">SAN MARINE SURVEY &amp; INSPECTION</div>
+        <div id="sm-boot-spin" style="margin-top:18px;width:28px;height:28px;border:3px solid rgba(255,255,255,.25);border-top-color:#5eead4;border-radius:50%;animation:smspin 1s linear infinite"></div>
+        <div id="sm-boot-msg" style="margin-top:14px;font-size:13px;color:#cbd5e1;max-width:320px">লোড হচ্ছে...</div>
+        <div id="sm-boot-actions" style="display:none;margin-top:16px;gap:8px;flex-wrap:wrap;justify-content:center">
+          <button id="sm-boot-retry" type="button" style="padding:10px 16px;border-radius:12px;border:0;background:#14b8a6;color:#020617;font-weight:800;font-size:12px">আবার চেষ্টা করুন</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var done = false;
+        function el(id) { return document.getElementById(id); }
+        function fail(text) {
+          if (done) return;
+          var m = el('sm-boot-msg'), a = el('sm-boot-actions'), s = el('sm-boot-spin');
+          if (m) m.textContent = text;
+          if (s) s.style.display = 'none';
+          if (a) a.style.display = 'flex';
+        }
+        // Refresh the downloaded app files only (service worker + cache). Login data and server records are untouched.
+        function resetAndReload() {
+          var p = Promise.resolve();
+          try {
+            if (navigator.serviceWorker && navigator.serviceWorker.getRegistrations) {
+              p = navigator.serviceWorker.getRegistrations().then(function (rs) { return Promise.all(rs.map(function (r) { return r.unregister(); })); });
+            }
+            if (window.caches) {
+              p = p.then(function () { return caches.keys().then(function (ks) { return Promise.all(ks.map(function (k) { return caches.delete(k); })); }); });
+            }
+          } catch (e) {}
+          p.catch(function () {}).then(function () { location.reload(); });
+        }
+        var timer = setTimeout(function () { fail('অ্যাপ চালু হতে স্বাভাবিকের চেয়ে বেশি সময় লাগছে। নেটওয়ার্ক ধীর হতে পারে — আবার চেষ্টা করুন।'); }, 30000);
+        window.__smBootDone = function () { done = true; clearTimeout(timer); };
+        window.addEventListener('error', function (e) { fail('অ্যাপ চালু করতে সমস্যা হয়েছে' + (e && e.message ? ': ' + e.message : '') + '। আবার চেষ্টা করুন।'); });
+        window.addEventListener('unhandledrejection', function (e) { fail('অ্যাপ চালু করতে সমস্যা হয়েছে' + (e && e.reason && e.reason.message ? ': ' + e.reason.message : '') + '। আবার চেষ্টা করুন।'); });
+        var b = el('sm-boot-retry');
+        if (b) b.addEventListener('click', resetAndReload);
+      })();
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
