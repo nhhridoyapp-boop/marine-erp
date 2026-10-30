@@ -1,0 +1,85 @@
+{
+  "name": "Setting",
+  "type": "object",
+  "properties": {
+    "companyName": {
+      "type": "string",
+      "title": "\u0995\u09cb\u09ae\u09cd\u09aa\u09be\u09a8\u09bf \u09a8\u09be\u09ae",
+      "default": "SAN MARINE SURVEY & INSPECTION"
+    },
+    "reportHeader": {
+      "type": "string",
+      "title": "\u09b0\u09bf\u09aa\u09cb\u09b0\u09cd\u099f \u09b9\u09c7\u09a1\u09be\u09b0",
+      "default": "Daily Discharge Report"
+    },
+    "reportSubHeader": {
+      "type": "string",
+      "title": "\u09b0\u09bf\u09aa\u09cb\u09b0\u09cd\u099f \u09b8\u09be\u09ac-\u09b9\u09c7\u09a1\u09be\u09b0",
+      "default": "DEDICATED TO SERVING YOUR NEEDS"
+    },
+    "reportTagline": {
+      "type": "string",
+      "title": "\u09b0\u09bf\u09aa\u09cb\u09b0\u09cd\u099f \u099f\u09cd\u09af\u09be\u0997\u09b2\u09be\u0987\u09a8",
+      "default": "MARINE SURVEY AND CONSULTANCY FIRM"
+    },
+    "address": {
+      "type": "string",
+      "title": "\u09a0\u09bf\u0995\u09be\u09a8\u09be",
+      "default": "1817, Nirman SS Tower (5th Floor) Abdus Sattar By Lane, Sk. Mujib Road, Badamtali, Agrabad, Chattogram."
+    },
+    "email": {
+      "type": "string",
+      "title": "\u0987\u09ae\u09c7\u0987\u09b2",
+      "default": "smsichittagong@gmail.com"
+    },
+    "phone": {
+      "type": "string",
+      "title": "\u09ab\u09cb\u09a8",
+      "default": "+88 02 3333 22848, 01923-008877, 01923-006688"
+    },
+    "oldEmptyWeightHours": {
+      "type": "number",
+      "title": "\u09aa\u09c1\u09b0\u09cb\u09a8\u09cb \u0996\u09be\u09b2\u09bf \u0993\u099c\u09a8 \u09b8\u09c0\u09ae\u09be (\u0998\u09a3\u09cd\u099f\u09be)",
+      "default": 24
+    },
+    "minTripGapMinutes": {
+      "type": "number",
+      "title": "\u09a8\u09cd\u09af\u09c2\u09a8\u09a4\u09ae \u099f\u09cd\u09b0\u09bf\u09aa \u0997\u09cd\u09af\u09be\u09aa (\u09ae\u09bf\u09a8\u09bf\u099f)",
+      "default": 60
+    },
+    "pendingEmptyAlertHours": {
+      "type": "number",
+      "title": "\u09aa\u09c7\u09a8\u09cd\u09a1\u09bf\u0982 \u0996\u09be\u09b2\u09bf \u0993\u099c\u09a8 \u0985\u09cd\u09af\u09be\u09b2\u09be\u09b0\u09cd\u099f (\u0998\u09a3\u09cd\u099f\u09be)",
+      "default": 12
+    },
+    "appVersion": {
+      "type": "string",
+      "title": "\u0985\u09cd\u09af\u09be\u09aa \u09ad\u09be\u09b0\u09cd\u09b8\u09a8 (\u09ae\u09be\u0987\u0997\u09cd\u09b0\u09c7\u09b6\u09a8 \u09b8\u09c7\u09ab\u099f\u09bf-\u09b0 \u099c\u09a8\u09cd\u09af)"
+    },
+    "lastBackupAt": {
+      "type": "string",
+      "title": "\u09b6\u09c7\u09b7 \u09ac\u09cd\u09af\u09be\u0995\u0986\u09aa \u09b8\u09ae\u09af\u09bc"
+    },
+    "ocrWorkerUrl": {
+      "type": "string",
+      "title": "Gemini OCR Worker URL"
+    }
+  },
+  "required": [
+    "companyName"
+  ],
+  "rls": {
+    "create": null,
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

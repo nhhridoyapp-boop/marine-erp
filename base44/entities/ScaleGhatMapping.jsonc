@@ -1,0 +1,34 @@
+{
+  "name": "ScaleGhatMapping",
+  "type": "object",
+  "properties": {
+    "scaleName": {
+      "type": "string",
+      "title": "\u09b8\u09cd\u0995\u09c7\u09b2 \u09a8\u09be\u09ae"
+    },
+    "ghatName": {
+      "type": "string",
+      "title": "\u0998\u09be\u099f \u09a8\u09be\u09ae"
+    },
+    "lastUpdated": {
+      "type": "string"
+    },
+    "timesUsed": {
+      "type": "number",
+      "default": 1
+    }
+  },
+  "required": [
+    "scaleName"
+  ],
+  "rls": {
+    "create": null,
+    "read": null,
+    "update": null,
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

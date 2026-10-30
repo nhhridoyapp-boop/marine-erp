@@ -1,0 +1,128 @@
+{
+  "name": "VesselClosing",
+  "type": "object",
+  "properties": {
+    "motherVesselId": {
+      "type": "string"
+    },
+    "motherVesselName": {
+      "type": "string"
+    },
+    "lighterVesselId": {
+      "type": "string"
+    },
+    "lighterVesselName": {
+      "type": "string"
+    },
+    "consigneeId": {
+      "type": "string"
+    },
+    "consigneeName": {
+      "type": "string"
+    },
+    "ghatId": {
+      "type": "string"
+    },
+    "ghatName": {
+      "type": "string"
+    },
+    "cargoName": {
+      "type": "string",
+      "title": "\u0995\u09be\u09b0\u09cd\u0997\u09cb"
+    },
+    "declaredCargoMT": {
+      "type": "number",
+      "title": "\u0998\u09cb\u09b7\u09bf\u09a4 \u0995\u09be\u09b0\u09cd\u0997\u09cb (MT)"
+    },
+    "arrivalDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "closingDate": {
+      "type": "string",
+      "format": "date",
+      "title": "\u0995\u09cd\u09b2\u09cb\u099c\u09bf\u0982 \u09a4\u09be\u09b0\u09bf\u0996"
+    },
+    "closedBy": {
+      "type": "string"
+    },
+    "closedByName": {
+      "type": "string"
+    },
+    "totalCompletedTrucks": {
+      "type": "number",
+      "title": "\u09ae\u09cb\u099f \u099f\u09cd\u09b0\u09be\u0995"
+    },
+    "totalBags": {
+      "type": "number",
+      "title": "\u09ae\u09cb\u099f \u09ac\u09cd\u09af\u09be\u0997"
+    },
+    "totalDailyNetWeightKg": {
+      "type": "number",
+      "title": "\u09ae\u09cb\u099f \u09a8\u09c7\u099f (KG)"
+    },
+    "bagTareWeightGrams": {
+      "type": "number",
+      "title": "\u09ac\u09cd\u09af\u09be\u0997 \u099f\u09c7\u09af\u09bc\u09be\u09b0 (\u0997\u09cd\u09b0\u09be\u09ae)"
+    },
+    "totalBagTareWeightKg": {
+      "type": "number",
+      "title": "\u09ae\u09cb\u099f \u09ac\u09cd\u09af\u09be\u0997 \u099f\u09c7\u09af\u09bc\u09be\u09b0 (KG)"
+    },
+    "finalNetWeightKg": {
+      "type": "number",
+      "title": "\u099a\u09c2\u09a1\u09bc\u09be\u09a8\u09cd\u09a4 \u09a8\u09c7\u099f (KG)"
+    },
+    "finalNetWeightMT": {
+      "type": "number",
+      "title": "\u099a\u09c2\u09a1\u09bc\u09be\u09a8\u09cd\u09a4 \u09a8\u09c7\u099f (MT)"
+    },
+    "closingNotes": {
+      "type": "string"
+    },
+    "lighterBreakdown": {
+      "type": "string",
+      "title": "\u09b2\u09be\u0987\u099f\u09be\u09b0 \u09ac\u09cd\u09b0\u09c7\u0995\u09a1\u09be\u0989\u09a8 (JSON)"
+    },
+    "dateBreakdown": {
+      "type": "string",
+      "title": "\u09a4\u09be\u09b0\u09bf\u0996 \u09ac\u09cd\u09b0\u09c7\u0995\u09a1\u09be\u0989\u09a8 (JSON)"
+    },
+    "truckListBreakdown": {
+      "type": "string",
+      "title": "\u099f\u09cd\u09b0\u09be\u0995 \u09b2\u09bf\u09b8\u09cd\u099f (JSON)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "LOCKED",
+        "REOPENED"
+      ],
+      "default": "LOCKED"
+    },
+    "reopenRequested": {
+      "type": "boolean",
+      "default": false
+    },
+    "reopenedBy": {
+      "type": "string"
+    },
+    "reopenedAt": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "lighterVesselId",
+    "closingDate"
+  ],
+  "rls": {
+    "create": null,
+    "read": null,
+    "update": null,
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

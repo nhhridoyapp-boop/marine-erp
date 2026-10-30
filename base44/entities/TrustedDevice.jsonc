@@ -1,0 +1,52 @@
+{
+  "name": "TrustedDevice",
+  "type": "object",
+  "properties": {
+    "userId": {
+      "type": "string",
+      "title": "\u0987\u0989\u099c\u09be\u09b0 ID"
+    },
+    "deviceId": {
+      "type": "string",
+      "title": "\u09a1\u09bf\u09ad\u09be\u0987\u09b8 ID"
+    },
+    "deviceName": {
+      "type": "string",
+      "title": "\u09a1\u09bf\u09ad\u09be\u0987\u09b8 \u09a8\u09be\u09ae"
+    },
+    "trustedAt": {
+      "type": "string",
+      "title": "\u099f\u09cd\u09b0\u09be\u09b8\u09cd\u099f \u0995\u09b0\u09be \u09b9\u09af\u09bc\u09c7\u099b\u09c7"
+    },
+    "lastUsedAt": {
+      "type": "string",
+      "title": "\u09b8\u09b0\u09cd\u09ac\u09b6\u09c7\u09b7 \u09ac\u09cd\u09af\u09ac\u09b9\u09be\u09b0"
+    }
+  },
+  "required": [
+    "userId",
+    "deviceId"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

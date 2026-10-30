@@ -1,0 +1,84 @@
+{
+  "name": "BackupLog",
+  "type": "object",
+  "properties": {
+    "createdAt": {
+      "type": "string",
+      "title": "\u09a4\u09c8\u09b0\u09bf\u09b0 \u09b8\u09ae\u09af\u09bc"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "manual",
+        "before-restore",
+        "before-reopen",
+        "pre-migration"
+      ],
+      "default": "auto"
+    },
+    "reason": {
+      "type": "string",
+      "title": "\u0995\u09be\u09b0\u09a3"
+    },
+    "fileUri": {
+      "type": "string",
+      "title": "\u09aa\u09cd\u09b0\u09be\u0987\u09ad\u09c7\u099f \u09ab\u09be\u0987\u09b2"
+    },
+    "counts": {
+      "type": "string",
+      "title": "\u09b0\u09c7\u0995\u09b0\u09cd\u09a1 \u09b8\u0982\u0996\u09cd\u09af\u09be (JSON)"
+    },
+    "totalRecords": {
+      "type": "number"
+    },
+    "createdByName": {
+      "type": "string"
+    },
+    "tier": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekly",
+        "monthly"
+      ],
+      "default": "daily",
+      "title": "\u09b0\u09bf\u099f\u09c7\u09a8\u09b6\u09a8 \u099f\u09bf\u09af\u09bc\u09be\u09b0"
+    },
+    "hash": {
+      "type": "string",
+      "title": "SHA-256 \u09b9\u09cd\u09af\u09be\u09b6"
+    },
+    "verified": {
+      "type": "boolean",
+      "default": false,
+      "title": "\u09ad\u09c7\u09b0\u09bf\u09ab\u09bf\u0995\u09c7\u09b6\u09a8 \u09b8\u09ae\u09cd\u09aa\u09a8\u09cd\u09a8"
+    },
+    "verifyDetails": {
+      "type": "string",
+      "title": "\u09ad\u09c7\u09b0\u09bf\u09ab\u09bf\u0995\u09c7\u09b6\u09a8 \u09ac\u09bf\u09ac\u09b0\u09a3"
+    }
+  },
+  "required": [
+    "createdAt",
+    "fileUri"
+  ],
+  "rls": {
+    "create": null,
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

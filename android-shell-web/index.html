@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#0B2A4A" />
+  <title>SAN MARINE SURVEY & INSPECTION</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { height: 100%; }
+    body {
+      background: #0B2A4A;
+      color: #fff;
+      font-family: 'Hind Siliguri', 'Noto Sans Bengali', system-ui, -apple-system, sans-serif;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      min-height: 100vh; padding: 24px; text-align: center; overflow: hidden;
+    }
+    .logo {
+      width: 96px; height: 96px; border-radius: 20px; background: #fff;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+      box-shadow: 0 8px 28px rgba(0,0,0,.35);
+    }
+    .logo img { width: 72px; height: 72px; object-fit: contain; }
+    .brand { font-size: 18px; font-weight: 800; letter-spacing: .3px; line-height: 1.35; }
+    .brand small { display: block; font-size: 11px; font-weight: 600; color: #5eead4; margin-top: 4px; letter-spacing: 1px; }
+    .spinner {
+      margin: 30px auto 14px; width: 38px; height: 38px;
+      border: 3px solid rgba(255,255,255,.18); border-top-color: #14b8a6; border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .status { font-size: 14px; color: #cbd5e1; font-weight: 600; }
+    .offline { display: none; margin-top: 18px; font-size: 12.5px; color: #fca5a5; line-height: 1.55; max-width: 280px; }
+    .offline.show { display: block; }
+  </style>
+</head>
+<body>
+  <div class="logo"><img src="https://media.base44.com/images/public/6ac0a307a078cddcdc7973b9/e43caedcd_logo.png" alt="Logo" /></div>
+  <div class="brand">SAN MARINE SURVEY & INSPECTION<small>SCALE MONITORING</small></div>
+  <div class="spinner" id="sp"></div>
+  <div class="status" id="st">অ্যাপ লোড হচ্ছে...</div>
+  <div class="offline" id="off">ইন্টারনেট সংযোগ নেই। অনুগ্রহ করে নেটওয়ার্ক চালু করে অ্যাপটি আবার খুলুন।</div>
+
+  <script>
+    // The native shell loads the live production URL (capacitor.config.ts → server.url).
+    // This page only appears for the brief moment before the network responds, or if offline.
+    (function () {
+      var st = document.getElementById('st');
+      var off = document.getElementById('off');
+      var sp = document.getElementById('sp');
+      // If we are still here after 6s, assume the remote URL has not loaded → show offline hint.
+      setTimeout(function () {
+        if (document.visibilityState !== 'hidden') {
+          sp.style.display = 'none';
+          st.textContent = 'সংযোগ স্থাপন করা যাচ্ছে না';
+          off.classList.add('show');
+        }
+      }, 6000);
+    })();
+  </script>
+</body>
+</html>

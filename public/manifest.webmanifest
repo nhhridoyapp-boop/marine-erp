@@ -1,0 +1,19 @@
+{
+  "id": "/",
+  "name": "SAN MARINE SURVEY & INSPECTION",
+  "short_name": "San Marine",
+  "description": "Scale Monitoring and Truck Entry System",
+  "lang": "bn",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0B2A4A",
+  "theme_color": "#0B2A4A",
+  "categories": ["business", "productivity"],
+  "icons": [
+    { "src": "/pwa-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/pwa-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/pwa-maskable-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

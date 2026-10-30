@@ -1,0 +1,65 @@
+{
+  "name": "MotherVessel",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "\u09ad\u09c7\u09b8\u09c7\u09b2 \u09a8\u09be\u09ae"
+    },
+    "company": {
+      "type": "string",
+      "title": "\u0995\u09cb\u09ae\u09cd\u09aa\u09be\u09a8\u09bf",
+      "enum": [
+        "SAN MARINE SURVEY & INSPECTION",
+        "SEAQUANT MARINE SERVICES"
+      ]
+    },
+    "cargoType": {
+      "type": "string",
+      "title": "\u0995\u09be\u09b0\u09cd\u0997\u09cb \u099f\u09be\u0987\u09aa"
+    },
+    "capacityMT": {
+      "type": "number",
+      "title": "\u0995\u09cd\u09af\u09be\u09aa\u09be\u09b8\u09bf\u099f\u09bf (MT)"
+    },
+    "totalCargoMT": {
+      "type": "number",
+      "title": "\u09ae\u09cb\u099f \u0995\u09be\u09b0\u09cd\u0997\u09cb (MT)"
+    },
+    "arrivalDate": {
+      "type": "string",
+      "format": "date",
+      "title": "\u0986\u0997\u09ae\u09a8 \u09a4\u09be\u09b0\u09bf\u0996"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Active",
+        "Completed",
+        "Pending"
+      ],
+      "default": "Active"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

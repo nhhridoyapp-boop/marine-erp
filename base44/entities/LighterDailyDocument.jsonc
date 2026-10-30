@@ -1,0 +1,170 @@
+{
+  "name": "LighterDailyDocument",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "title": "\u09a4\u09be\u09b0\u09bf\u0996"
+    },
+    "motherVesselId": {
+      "type": "string"
+    },
+    "motherVesselName": {
+      "type": "string"
+    },
+    "lighterVesselId": {
+      "type": "string"
+    },
+    "lighterVesselName": {
+      "type": "string"
+    },
+    "ghatId": {
+      "type": "string"
+    },
+    "ghatName": {
+      "type": "string"
+    },
+    "consigneeId": {
+      "type": "string"
+    },
+    "consigneeName": {
+      "type": "string"
+    },
+    "weighmentSheetPhoto": {
+      "type": "string",
+      "title": "\u0993\u09af\u09bc\u09c7\u0987\u09ae\u09c7\u09a8\u09cd\u099f \u09b6\u09bf\u099f \u099b\u09ac\u09bf (\u098f\u0995\u09be\u09a7\u09bf\u0995 \u09b9\u09b2\u09c7 JSON \u09a4\u09be\u09b2\u09bf\u0995\u09be)"
+    },
+    "pointKhataPhoto": {
+      "type": "string",
+      "title": "\u09aa\u09af\u09bc\u09c7\u09a8\u09cd\u099f \u0996\u09be\u09a4\u09be \u099b\u09ac\u09bf (\u098f\u0995\u09be\u09a7\u09bf\u0995 \u09b9\u09b2\u09c7 JSON \u09a4\u09be\u09b2\u09bf\u0995\u09be)"
+    },
+    "pointKhataTotalBags": {
+      "type": "number",
+      "title": "\u0996\u09be\u09a4\u09be \u09ae\u09cb\u099f \u09ac\u09cd\u09af\u09be\u0997"
+    },
+    "scaleTotalBags": {
+      "type": "number",
+      "title": "\u0993\u09af\u09bc\u09c7\u0987\u09ae\u09c7\u09a8\u09cd\u099f \u09b6\u09bf\u099f \u09ae\u09cb\u099f \u09ac\u09cd\u09af\u09be\u0997"
+    },
+    "bagDifference": {
+      "type": "number",
+      "title": "\u09ac\u09cd\u09af\u09be\u0997 \u09aa\u09be\u09b0\u09cd\u09a5\u0995\u09cd\u09af"
+    },
+    "weighmentSheetTotalTrucks": {
+      "type": "number"
+    },
+    "pointKhataTotalTrucks": {
+      "type": "number"
+    },
+    "truckDifference": {
+      "type": "number"
+    },
+    "weighmentTruckNumbers": {
+      "type": "string",
+      "title": "\u0993\u09af\u09bc\u09c7\u0987\u09ae\u09c7\u09a8\u09cd\u099f \u099f\u09cd\u09b0\u09be\u0995 (JSON)"
+    },
+    "pointKhataTruckNumbers": {
+      "type": "string",
+      "title": "\u0996\u09be\u09a4\u09be \u099f\u09cd\u09b0\u09be\u0995 (JSON)"
+    },
+    "weighmentRows": {
+      "type": "string",
+      "title": "\u0993\u09af\u09bc\u09c7\u0987\u09ae\u09c7\u09a8\u09cd\u099f \u09b6\u09bf\u099f \u099f\u09cd\u09b0\u09be\u0995 \u0993 \u09ac\u09cd\u09af\u09be\u0997 \u09b2\u09be\u0987\u09a8 (JSON)"
+    },
+    "pointKhataRows": {
+      "type": "string",
+      "title": "\u09aa\u09af\u09bc\u09c7\u09a8\u09cd\u099f \u0996\u09be\u09a4\u09be \u099f\u09cd\u09b0\u09be\u0995 \u0993 \u09ac\u09cd\u09af\u09be\u0997 \u09b2\u09be\u0987\u09a8 (JSON)"
+    },
+    "missingInPointKhata": {
+      "type": "string",
+      "title": "\u0996\u09be\u09a4\u09be\u09af\u09bc \u09a8\u09c7\u0987 (JSON)"
+    },
+    "missingInWeighmentSheet": {
+      "type": "string",
+      "title": "\u09b6\u09bf\u099f\u09c7 \u09a8\u09c7\u0987 (JSON)"
+    },
+    "inBothTrucks": {
+      "type": "string",
+      "title": "\u0989\u09ad\u09af\u09bc\u09c7 \u0986\u099b\u09c7 (JSON)"
+    },
+    "duplicateTrucks": {
+      "type": "string",
+      "title": "\u09a1\u09c1\u09aa\u09cd\u09b2\u09bf\u0995\u09c7\u099f (JSON)"
+    },
+    "reconciliationStatus": {
+      "type": "string",
+      "enum": [
+        "MATCHED",
+        "MISMATCH",
+        "TRUCK_AND_BAG_MISMATCH",
+        "TRUCK_MISMATCH",
+        "BAG_MISMATCH",
+        "PENDING"
+      ],
+      "default": "PENDING"
+    },
+    "remarks": {
+      "type": "string"
+    },
+    "uploadedBy": {
+      "type": "string"
+    },
+    "uploadedAt": {
+      "type": "string"
+    },
+    "lastEditedBy": {
+      "type": "string"
+    },
+    "lastEditedAt": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string",
+      "enum": [
+        "SAN MARINE SURVEY & INSPECTION",
+        "SEAQUANT MARINE SERVICES"
+      ]
+    }
+  },
+  "required": [
+    "date",
+    "lighterVesselId"
+  ],
+  "rls": {
+    "create": null,
+    "read": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

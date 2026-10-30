@@ -1,0 +1,35 @@
+{
+  "name": "Scale",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "\u09b8\u09cd\u0995\u09c7\u09b2 \u09a8\u09be\u09ae"
+    },
+    "note": {
+      "type": "string",
+      "title": "\u09a8\u09cb\u099f"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

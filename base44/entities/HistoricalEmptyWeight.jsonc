@@ -1,0 +1,123 @@
+{
+  "name": "HistoricalEmptyWeight",
+  "type": "object",
+  "properties": {
+    "truckNumber": {
+      "type": "string"
+    },
+    "normalizedTruckNumber": {
+      "type": "string"
+    },
+    "tareWeight": {
+      "type": "number"
+    },
+    "weighmentDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "weighmentTime": {
+      "type": "string"
+    },
+    "weighedAt": {
+      "type": "string"
+    },
+    "ghat": {
+      "type": "string"
+    },
+    "scaleName": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string",
+      "enum": [
+        "SAN MARINE SURVEY & INSPECTION",
+        "SEAQUANT MARINE SERVICES"
+      ]
+    },
+    "recordType": {
+      "type": "string",
+      "enum": [
+        "HISTORICAL_EMPTY_WEIGHT"
+      ]
+    },
+    "recordKey": {
+      "type": "string"
+    },
+    "sourceKey": {
+      "type": "string"
+    },
+    "sourceFileName": {
+      "type": "string"
+    },
+    "sourceSection": {
+      "type": "string"
+    },
+    "sourceRow": {
+      "type": "number"
+    },
+    "sourceRecordId": {
+      "type": "string"
+    },
+    "sourceHash": {
+      "type": "string"
+    },
+    "rawTruckNumber": {
+      "type": "string"
+    },
+    "rawDate": {
+      "type": "string"
+    },
+    "rawTime": {
+      "type": "string"
+    },
+    "importBatchId": {
+      "type": "string"
+    },
+    "backupId": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "truckNumber",
+    "normalizedTruckNumber",
+    "tareWeight",
+    "weighmentDate",
+    "recordType",
+    "recordKey",
+    "sourceKey",
+    "sourceFileName",
+    "sourceHash",
+    "importBatchId"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

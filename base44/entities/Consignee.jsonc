@@ -1,0 +1,51 @@
+{
+  "name": "Consignee",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "\u0986\u09ae\u09a6\u09be\u09a8\u09bf\u0995\u09be\u09b0\u0995 \u09a8\u09be\u09ae"
+    },
+    "company": {
+      "type": "string",
+      "title": "\u0995\u09cb\u09ae\u09cd\u09aa\u09be\u09a8\u09bf",
+      "enum": [
+        "SAN MARINE SURVEY & INSPECTION",
+        "SEAQUANT MARINE SERVICES"
+      ]
+    },
+    "address": {
+      "type": "string",
+      "title": "\u09a0\u09bf\u0995\u09be\u09a8\u09be"
+    },
+    "contactPerson": {
+      "type": "string",
+      "title": "\u09af\u09cb\u0997\u09be\u09af\u09cb\u0997 \u09ac\u09cd\u09af\u0995\u09cd\u09a4\u09bf"
+    },
+    "phone": {
+      "type": "string",
+      "title": "\u09ab\u09cb\u09a8"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

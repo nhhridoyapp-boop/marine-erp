@@ -1,0 +1,90 @@
+{
+  "name": "ApprovalRequest",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "USER_REGISTRATION",
+        "USER_INVITATION",
+        "RECORD_EDIT",
+        "RECORD_DELETE",
+        "VESSEL_REOPEN",
+        "LIGHTER_REOPEN",
+        "MASTER_DATA_CHANGE",
+        "WEIGHT_MISMATCH"
+      ],
+      "title": "\u0985\u09a8\u09c1\u09ae\u09cb\u09a6\u09a8 \u099f\u09be\u0987\u09aa"
+    },
+    "targetId": {
+      "type": "string"
+    },
+    "targetDescription": {
+      "type": "string",
+      "title": "\u09ac\u09bf\u09ac\u09b0\u09a3"
+    },
+    "requestedBy": {
+      "type": "string"
+    },
+    "requestedByName": {
+      "type": "string"
+    },
+    "requestedRole": {
+      "type": "string"
+    },
+    "requestedAt": {
+      "type": "string"
+    },
+    "details": {
+      "type": "string",
+      "title": "\u09ac\u09bf\u09b8\u09cd\u09a4\u09be\u09b0\u09bf\u09a4"
+    },
+    "payload": {
+      "type": "string",
+      "title": "\u09aa\u09c7\u09b2\u09cb\u09a1 (JSON)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "default": "pending"
+    },
+    "reviewedBy": {
+      "type": "string"
+    },
+    "reviewedByName": {
+      "type": "string"
+    },
+    "reviewedAt": {
+      "type": "string"
+    },
+    "reviewNotes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "targetDescription"
+  ],
+  "rls": {
+    "create": null,
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

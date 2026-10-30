@@ -1,0 +1,45 @@
+{
+  "name": "OcrUsage",
+  "type": "object",
+  "properties": {
+    "userId": {
+      "type": "string",
+      "title": "\u0987\u0989\u099c\u09be\u09b0 ID"
+    },
+    "hourKey": {
+      "type": "string",
+      "title": "\u0998\u09a3\u09cd\u099f\u09be \u0995\u09c0 (YYYY-MM-DDTHH)"
+    },
+    "count": {
+      "type": "number",
+      "title": "\u09ac\u09cd\u09af\u09ac\u09b9\u09be\u09b0 \u09b8\u0982\u0996\u09cd\u09af\u09be",
+      "default": 1
+    }
+  },
+  "required": [
+    "userId",
+    "hourKey"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

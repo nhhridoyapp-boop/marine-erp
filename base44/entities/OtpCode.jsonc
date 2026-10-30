@@ -1,0 +1,77 @@
+{
+  "name": "OtpCode",
+  "type": "object",
+  "properties": {
+    "challengeId": {
+      "type": "string",
+      "title": "\u099a\u09cd\u09af\u09be\u09b2\u09c7\u099e\u09cd\u099c ID"
+    },
+    "userId": {
+      "type": "string",
+      "title": "\u0987\u0989\u099c\u09be\u09b0 ID"
+    },
+    "identifier": {
+      "type": "string",
+      "title": "\u09aa\u09b0\u09bf\u099a\u09af\u09bc (\u0987\u09ae\u09c7\u0987\u09b2/\u09ae\u09cb\u09ac\u09be\u0987\u09b2)"
+    },
+    "codeHash": {
+      "type": "string",
+      "title": "\u0995\u09cb\u09a1 \u09b9\u09cd\u09af\u09be\u09b6"
+    },
+    "integrityTag": {
+      "type": "string",
+      "title": "\u09b8\u09be\u09b0\u09cd\u09ad\u09be\u09b0 \u0987\u09a8\u09cd\u099f\u09bf\u0997\u09cd\u09b0\u09bf\u099f\u09bf \u099f\u09cd\u09af\u09be\u0997 (HMAC)"
+    },
+    "purpose": {
+      "type": "string",
+      "title": "\u0989\u09a6\u09cd\u09a6\u09c7\u09b6\u09cd\u09af",
+      "default": "LOGIN_DEVICE_VERIFY"
+    },
+    "expiresAt": {
+      "type": "string",
+      "title": "\u09ae\u09c7\u09af\u09bc\u09be\u09a6 \u09b6\u09c7\u09b7"
+    },
+    "attempts": {
+      "type": "number",
+      "title": "\u099a\u09c7\u09b7\u09cd\u099f\u09be \u09b8\u0982\u0996\u09cd\u09af\u09be",
+      "default": 0
+    },
+    "consumed": {
+      "type": "boolean",
+      "title": "\u09ac\u09cd\u09af\u09ac\u09c3\u09a4",
+      "default": false
+    },
+    "createdAt": {
+      "type": "string",
+      "title": "\u09a4\u09c8\u09b0\u09bf\u09b0 \u09b8\u09ae\u09af\u09bc"
+    }
+  },
+  "required": [
+    "challengeId",
+    "userId",
+    "codeHash",
+    "expiresAt"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

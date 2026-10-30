@@ -1,0 +1,85 @@
+{
+  "name": "AuditLog",
+  "type": "object",
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "title": "\u09b8\u09ae\u09af\u09bc"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "userName": {
+      "type": "string",
+      "title": "\u0987\u0989\u099c\u09be\u09b0 \u09a8\u09be\u09ae"
+    },
+    "userEmail": {
+      "type": "string",
+      "title": "\u0987\u0989\u099c\u09be\u09b0 \u0987\u09ae\u09c7\u0987\u09b2"
+    },
+    "userRole": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string",
+      "title": "\u0995\u09cd\u09b0\u09bf\u09af\u09bc\u09be"
+    },
+    "recordType": {
+      "type": "string",
+      "title": "\u09b0\u09c7\u0995\u09b0\u09cd\u09a1 \u099f\u09be\u0987\u09aa"
+    },
+    "recordId": {
+      "type": "string"
+    },
+    "details": {
+      "type": "string",
+      "title": "\u09ac\u09bf\u09b8\u09cd\u09a4\u09be\u09b0\u09bf\u09a4"
+    },
+    "oldValue": {
+      "type": "string"
+    },
+    "newValue": {
+      "type": "string"
+    },
+    "success": {
+      "type": "boolean",
+      "default": true,
+      "title": "\u09b8\u09ab\u09b2/\u09ac\u09cd\u09af\u09b0\u09cd\u09a5"
+    }
+  },
+  "required": [
+    "action",
+    "userName"
+  ],
+  "rls": {
+    "create": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

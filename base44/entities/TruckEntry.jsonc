@@ -1,0 +1,222 @@
+{
+  "name": "TruckEntry",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "title": "\u09b2\u09cb\u09a1 \u09a4\u09be\u09b0\u09bf\u0996"
+    },
+    "shift": {
+      "type": "string",
+      "enum": [
+        "Day",
+        "Night"
+      ],
+      "default": "Day"
+    },
+    "motherVesselId": {
+      "type": "string"
+    },
+    "lighterVesselId": {
+      "type": "string"
+    },
+    "consigneeId": {
+      "type": "string"
+    },
+    "consigneeName": {
+      "type": "string",
+      "title": "\u0986\u09ae\u09a6\u09be\u09a8\u09bf\u0995\u09be\u09b0\u0995"
+    },
+    "company": {
+      "type": "string",
+      "title": "\u0995\u09cb\u09ae\u09cd\u09aa\u09be\u09a8\u09bf",
+      "enum": [
+        "SAN MARINE SURVEY & INSPECTION",
+        "SEAQUANT MARINE SERVICES"
+      ]
+    },
+    "ghatId": {
+      "type": "string"
+    },
+    "ghatName": {
+      "type": "string",
+      "title": "\u0998\u09be\u099f"
+    },
+    "scaleName": {
+      "type": "string",
+      "title": "\u09b8\u09cd\u0995\u09c7\u09b2 \u09a8\u09be\u09ae"
+    },
+    "cargoType": {
+      "type": "string",
+      "title": "\u0995\u09be\u09b0\u09cd\u0997\u09cb \u099f\u09be\u0987\u09aa"
+    },
+    "cargoName": {
+      "type": "string",
+      "title": "\u0995\u09be\u09b0\u09cd\u0997\u09cb"
+    },
+    "truckNumber": {
+      "type": "string",
+      "title": "\u099f\u09cd\u09b0\u09be\u0995 \u09a8\u09ae\u09cd\u09ac\u09b0"
+    },
+    "normalizedTruckNumber": {
+      "type": "string"
+    },
+    "bags": {
+      "type": "number",
+      "title": "\u09ac\u09cd\u09af\u09be\u0997 \u09b8\u0982\u0996\u09cd\u09af\u09be"
+    },
+    "gross": {
+      "type": "number",
+      "title": "\u0997\u09cd\u09b0\u09b8 \u0993\u099c\u09a8 (KG)"
+    },
+    "tare": {
+      "type": "number",
+      "title": "\u099f\u09cd\u09af\u09be\u09b2\u09bf/\u099f\u09c7\u09af\u09bc\u09be\u09b0 \u0993\u099c\u09a8 (KG)"
+    },
+    "weightIn": {
+      "type": "number",
+      "title": "Weight In (KG)"
+    },
+    "weightOut": {
+      "type": "number",
+      "title": "Weight Out (KG)"
+    },
+    "secondWeight": {
+      "type": "number",
+      "title": "\u09b8\u09c7\u0995\u09c7\u09a8\u09cd\u09a1 \u0993\u09af\u09bc\u09c7\u099f (KG)"
+    },
+    "secondWeightDate": {
+      "type": "string",
+      "format": "date",
+      "title": "\u09b8\u09c7\u0995\u09c7\u09a8\u09cd\u09a1 \u0993\u09af\u09bc\u09c7\u099f \u09a4\u09be\u09b0\u09bf\u0996"
+    },
+    "secondWeightTime": {
+      "type": "string",
+      "title": "\u09b8\u09c7\u0995\u09c7\u09a8\u09cd\u09a1 \u0993\u09af\u09bc\u09c7\u099f \u09b8\u09ae\u09af\u09bc"
+    },
+    "emptyMonitorWeight": {
+      "type": "number",
+      "title": "\u0996\u09be\u09b2\u09bf \u09ae\u09a8\u09bf\u099f\u09b0 \u0993\u099c\u09a8 (KG)"
+    },
+    "emptyDocMissing": {
+      "type": "boolean"
+    },
+    "loadedVsEmptyDiff": {
+      "type": "number",
+      "title": "\u09b2\u09cb\u09a1-\u0996\u09be\u09b2\u09bf \u09aa\u09be\u09b0\u09cd\u09a5\u0995\u09cd\u09af"
+    },
+    "emptyWeightDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "emptyWeightTime": {
+      "type": "string"
+    },
+    "tareDate": {
+      "type": "string",
+      "format": "date",
+      "title": "\u099f\u09cd\u09af\u09be\u09b2\u09bf \u09a4\u09be\u09b0\u09bf\u0996"
+    },
+    "tareTime": {
+      "type": "string",
+      "title": "\u099f\u09cd\u09af\u09be\u09b2\u09bf \u09b8\u09ae\u09af\u09bc"
+    },
+    "net": {
+      "type": "number",
+      "title": "\u09a8\u09c7\u099f \u0993\u099c\u09a8 (KG)"
+    },
+    "serial": {
+      "type": "string",
+      "title": "\u09b8\u09bf\u09b0\u09bf\u09af\u09bc\u09be\u09b2"
+    },
+    "scalePhoto": {
+      "type": "string",
+      "title": "\u09b8\u09c7\u0995\u09c7\u09a8\u09cd\u09a1 \u0993\u09af\u09bc\u09c7\u099f \u09b8\u09cd\u0995\u09c7\u09b2 \u0995\u09aa\u09bf"
+    },
+    "monitorPhoto": {
+      "type": "string",
+      "title": "\u09b8\u09c7\u0995\u09c7\u09a8\u09cd\u09a1 \u0993\u09af\u09bc\u09c7\u099f \u09ae\u09a8\u09bf\u099f\u09b0 \u099b\u09ac\u09bf"
+    },
+    "latitude": {
+      "type": "number",
+      "title": "GPS Latitude"
+    },
+    "longitude": {
+      "type": "number",
+      "title": "GPS Longitude"
+    },
+    "locationName": {
+      "type": "string",
+      "title": "\u0985\u09cd\u09af\u09be\u09b2\u09be\u0995\u09be\u09b0 \u09a8\u09be\u09ae (Reverse Geocode)"
+    },
+    "gpsCapturedAt": {
+      "type": "string",
+      "title": "GPS Capture Time"
+    },
+    "weightMatch": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL"
+      ]
+    },
+    "emptyWeightMatched": {
+      "type": "boolean",
+      "default": false
+    },
+    "emptyWeightId": {
+      "type": "string"
+    },
+    "missingDocs": {
+      "type": "boolean",
+      "default": false
+    },
+    "problemFlags": {
+      "type": "string",
+      "title": "\u09b8\u09ae\u09b8\u09cd\u09af\u09be \u09ab\u09cd\u09b2\u09cd\u09af\u09be\u0997 (JSON)"
+    },
+    "createdBy": {
+      "type": "string"
+    },
+    "enteredBy": {
+      "type": "string"
+    },
+    "enteredRole": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
+    },
+    "remarks": {
+      "type": "string"
+    },
+    "employeeId": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "lastEditedBy": {
+      "type": "string"
+    },
+    "lastEditedAt": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "truckNumber",
+    "date",
+    "net"
+  ],
+  "rls": {
+    "create": null,
+    "read": null,
+    "update": null,
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

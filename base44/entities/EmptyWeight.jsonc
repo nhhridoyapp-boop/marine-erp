@@ -1,0 +1,195 @@
+{
+  "name": "EmptyWeight",
+  "type": "object",
+  "properties": {
+    "truckNumber": {
+      "type": "string",
+      "title": "\u099f\u09cd\u09b0\u09be\u0995 \u09a8\u09ae\u09cd\u09ac\u09b0"
+    },
+    "normalizedTruckNumber": {
+      "type": "string"
+    },
+    "emptyWeightDate": {
+      "type": "string",
+      "format": "date",
+      "title": "\u0996\u09be\u09b2\u09bf \u0993\u099c\u09a8 \u09a4\u09be\u09b0\u09bf\u0996"
+    },
+    "emptyWeightTime": {
+      "type": "string",
+      "title": "\u0996\u09be\u09b2\u09bf \u0993\u099c\u09a8 \u09b8\u09ae\u09af\u09bc"
+    },
+    "ghat": {
+      "type": "string",
+      "title": "\u0998\u09be\u099f"
+    },
+    "company": {
+      "type": "string",
+      "title": "\u0995\u09cb\u09ae\u09cd\u09aa\u09be\u09a8\u09bf",
+      "enum": [
+        "SAN MARINE SURVEY & INSPECTION",
+        "SEAQUANT MARINE SERVICES"
+      ]
+    },
+    "latitude": {
+      "type": "number",
+      "title": "GPS Latitude"
+    },
+    "longitude": {
+      "type": "number",
+      "title": "GPS Longitude"
+    },
+    "locationName": {
+      "type": "string",
+      "title": "\u0985\u09cd\u09af\u09be\u09b2\u09be\u0995\u09be\u09b0 \u09a8\u09be\u09ae (Reverse Geocode)"
+    },
+    "gpsCapturedAt": {
+      "type": "string",
+      "title": "GPS Capture Time"
+    },
+    "scaleName": {
+      "type": "string",
+      "title": "\u09b8\u09cd\u0995\u09c7\u09b2 \u09a8\u09be\u09ae"
+    },
+    "tallyWeight": {
+      "type": "number",
+      "title": "\u099f\u09cd\u09af\u09be\u09b2\u09bf \u0993\u099c\u09a8 (KG)"
+    },
+    "monitorWeight": {
+      "type": "number",
+      "title": "\u09ae\u09a8\u09bf\u099f\u09b0 \u0993\u099c\u09a8 (KG)"
+    },
+    "difference": {
+      "type": "number",
+      "title": "\u09aa\u09be\u09b0\u09cd\u09a5\u0995\u09cd\u09af (KG)"
+    },
+    "matchStatus": {
+      "type": "string",
+      "enum": [
+        "MATCHED",
+        "WEIGHT_MISMATCH"
+      ],
+      "default": "MATCHED"
+    },
+    "tallyOriginalPhoto": {
+      "type": "string",
+      "title": "\u099f\u09cd\u09af\u09be\u09b2\u09bf \u09b8\u09cd\u09b2\u09bf\u09aa \u099b\u09ac\u09bf"
+    },
+    "monitorPhoto": {
+      "type": "string",
+      "title": "\u09ae\u09a8\u09bf\u099f\u09b0 \u099b\u09ac\u09bf"
+    },
+    "emptyTruckVideo": {
+      "type": "string",
+      "title": "\u0996\u09be\u09b2\u09bf \u0997\u09be\u09dc\u09bf\u09b0 \u09ad\u09bf\u09a1\u09bf\u0993 (private file URI)"
+    },
+    "emptyTruckVideoName": {
+      "type": "string",
+      "title": "\u0996\u09be\u09b2\u09bf \u0997\u09be\u09dc\u09bf\u09b0 \u09ad\u09bf\u09a1\u09bf\u0993 \u09ab\u09be\u0987\u09b2\u09c7\u09b0 \u09a8\u09be\u09ae"
+    },
+    "remarks": {
+      "type": "string",
+      "title": "\u09ae\u09a8\u09cd\u09a4\u09ac\u09cd\u09af"
+    },
+    "ocrData": {
+      "type": "string",
+      "title": "OCR \u09a1\u09c7\u099f\u09be (JSON)"
+    },
+    "enteredById": {
+      "type": "string"
+    },
+    "enteredByName": {
+      "type": "string"
+    },
+    "enteredByRole": {
+      "type": "string"
+    },
+    "employeeId": {
+      "type": "string"
+    },
+    "createdTime": {
+      "type": "string"
+    },
+    "verificationStatus": {
+      "type": "string",
+      "enum": [
+        "VERIFIED",
+        "FLAG_FOR_REVIEW"
+      ],
+      "default": "VERIFIED"
+    },
+    "loadingEntryId": {
+      "type": "string",
+      "title": "\u09b8\u0982\u09af\u09c1\u0995\u09cd\u09a4 \u09b2\u09cb\u09a1 \u098f\u09a8\u09cd\u099f\u09cd\u09b0\u09bf ID"
+    },
+    "problemFlags": {
+      "type": "string",
+      "title": "\u09b8\u09ae\u09b8\u09cd\u09af\u09be \u09ab\u09cd\u09b2\u09cd\u09af\u09be\u0997 (JSON)"
+    },
+    "auditTrail": {
+      "type": "string",
+      "title": "\u0985\u09a1\u09bf\u099f \u099f\u09cd\u09b0\u09c7\u0987\u09b2 (JSON)"
+    },
+    "lastEditedBy": {
+      "type": "string"
+    },
+    "lastEditedAt": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "truckNumber",
+    "emptyWeightDate",
+    "ghat",
+    "tallyWeight",
+    "monitorWeight"
+  ],
+  "rls": {
+    "create": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "read": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

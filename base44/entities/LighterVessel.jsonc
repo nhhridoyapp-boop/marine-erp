@@ -1,0 +1,56 @@
+{
+  "name": "LighterVessel",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "\u09b2\u09be\u0987\u099f\u09be\u09b0 \u09a8\u09be\u09ae"
+    },
+    "company": {
+      "type": "string",
+      "title": "\u0995\u09cb\u09ae\u09cd\u09aa\u09be\u09a8\u09bf",
+      "enum": [
+        "SAN MARINE SURVEY & INSPECTION",
+        "SEAQUANT MARINE SERVICES"
+      ]
+    },
+    "motherVesselId": {
+      "type": "string",
+      "title": "\u09ae\u09be\u09a6\u09be\u09b0 \u09ad\u09c7\u09b8\u09c7\u09b2 ID"
+    },
+    "consigneeId": {
+      "type": "string"
+    },
+    "consigneeName": {
+      "type": "string",
+      "title": "\u0995\u09a8\u09b8\u09be\u0987\u09a8\u09bf"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Active",
+        "Completed",
+        "Pending"
+      ],
+      "default": "Active"
+    }
+  },
+  "required": [
+    "name",
+    "motherVesselId"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": null,
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

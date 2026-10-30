@@ -1,0 +1,88 @@
+{
+  "name": "HistoricalImportLog",
+  "type": "object",
+  "properties": {
+    "batchId": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "STARTED",
+        "COMPLETED",
+        "PARTIAL"
+      ]
+    },
+    "backupId": {
+      "type": "string"
+    },
+    "sourceFiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fileName": {
+            "type": "string"
+          },
+          "fileUri": {
+            "type": "string"
+          },
+          "hash": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "summaryFileUri": {
+      "type": "string"
+    },
+    "totalRows": {
+      "type": "number"
+    },
+    "successful": {
+      "type": "number"
+    },
+    "duplicates": {
+      "type": "number"
+    },
+    "invalid": {
+      "type": "number"
+    },
+    "review": {
+      "type": "number"
+    },
+    "skipped": {
+      "type": "number"
+    },
+    "errorMessage": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "batchId",
+    "status",
+    "backupId"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

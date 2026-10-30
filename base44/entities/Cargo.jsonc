@@ -1,0 +1,39 @@
+{
+  "name": "Cargo",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "\u0995\u09be\u09b0\u09cd\u0997\u09cb \u09a8\u09be\u09ae"
+    },
+    "type": {
+      "type": "string",
+      "title": "\u099f\u09be\u0987\u09aa"
+    },
+    "unit": {
+      "type": "string",
+      "title": "\u098f\u0995\u0995"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
